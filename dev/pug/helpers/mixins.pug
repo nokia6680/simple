@@ -1,0 +1,55 @@
+mixin netItemSingle(city, image, galleryImage1, galleryImage2, galleryImage3, address, phone, timing, link, reviewImage, reviewText, reviewAuthor, mapLink)
+    li(class="net-stores__item.net-item is-collapsed single")
+        <!--Front side of card-->
+        .net-item__inner.js-expander
+            picture.net-item__frame
+                source(srcset="static/images/content/" +image +".webp" type="image/webp")
+                img(src="static/images/content/" +image + ".jpg" alt="Винная студия - " +city)
+            h3.net-item__title=city
+        <!--Back side of card-->
+        .net-item__content
+            button(type="button").net-item__content-closer
+            
+            h2.net-item__address=address
+            
+            .net-item__gallery.net-swiper-contaner
+                button(type="button").net-item__prev
+                .swiper-wrapper
+                    picture.net-item__gallery-item.swiper-slide
+                        source(srcset="static/images/content/" +galleryImage1 +".webp" type="image/webp")
+                        img(src="static/images/content/" +galleryImage1 + ".jpg" alt="Винная студия - " +city)
+                    picture.net-item__gallery-item.swiper-slide
+                        source(srcset="static/images/content/" +galleryImage2 +".webp" type="image/webp")
+                        img(src="static/images/content/" +galleryImage2 + ".jpg" alt="Винная студия - " +city)
+                    picture.net-item__gallery-item.swiper-slide
+                        source(srcset="static/images/content/" +galleryImage3 +".webp" type="image/webp")
+                        img(src="static/images/content/" +galleryImage3 + ".jpg" alt="Винная студия - " +city)
+                button(type="button").net-item__next
+            <!--Информация о винотеке-->
+            ul.net-item__list
+                li.net-item__line
+                    b.net-item__title Адрес
+                    span.net-item__data=address
+                li.net-item__line
+                    b.net-item__title Телефон
+                    a(href="tel:+79123456789" target="_self").net-item__data=phone
+                li.net-item__line
+                    b.net-item__title Время работы
+                    span.net-item__data=timing
+                li.net-item__line
+                    b.net-item__title Instagram
+                    a(href="#" target="_self").net-item__data
+                        i.fab.fa-Instagram
+            <!--Отзыв-->
+            .net-item__review
+                picture.net-item__review-frame
+                    source(srcset="static/images/content/" +reviewImage +".webp" type="image/webp")
+                    img(src="static/images/content/" +reviewImage + ".jpg" alt="Винная студия - " +city)
+                .net-item__review-info
+                    p.net-item__review-text=reviewText
+                    span.net-item__review-author=reviewAuthor
+            <!--Управление-->
+            .net-item__controls
+                button(type="button").net-item__btn.js-vacant Работать здесь
+                button(type="button").net-item__btn.js-map Как добраться
+                a(href="#" target="_self").net-item__link Франшиза

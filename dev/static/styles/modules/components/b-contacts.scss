@@ -1,0 +1,124 @@
+.b-contacts {
+    &__join {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 300px;
+
+        @include flex-setting(column, flex-start, center);
+        padding: 1.25rem 0.625rem;
+        text-decoration: none;
+
+        border: 1px solid $black;
+        transition: 0.4s linear;
+
+        cursor: pointer;
+        outline: none;
+
+        &-title {
+            @include font-setting($roboto-font, 1.5rem, 1.222, 400, #000);
+            text-align: center;
+            padding-bottom: 5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: '';
+
+                width: 1px;
+                height: 40px;
+
+                background-color: #E6007E;
+
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &-logo {
+            max-width: 200px;
+            height: auto;
+            margin-left: 1rem;
+            object-fit: contain;
+        }
+
+        &:hover,
+        &:active {
+            border-color: #E6007E;
+            transition: 0.4s linear;
+        }
+    }
+}
+
+@include min-screen(730px) {
+    .b-contacts {
+        &__join {
+            max-width: 690px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.625rem 2.5rem;
+
+            &-title {
+                font-size: 2.5rem;
+                line-height: 3.5rem;
+                padding-bottom: 0;
+                margin-bottom: 0;
+
+                &::after {
+                    width: 40px;
+                    height: 1px;
+                    bottom: auto;
+                    top: 50%;
+                    left: auto;
+                    right: -1rem;
+                    transform: translateX(100%) translateY(-50%);
+                }
+            }
+
+            &-logo {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@include min-screen(991px) {
+    .b-contacts {
+        &__join {
+            max-width: 951px;
+
+            &-title {
+                &::after {
+                    width: 200px;
+                    right: -4rem;
+                }
+            }
+
+            &-logo {
+                max-width: 360px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .b-contacts {
+        &__join {
+            border-width: 2px;
+            //box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+            max-width: 1160px;
+
+            &-title {
+                font-size: 3rem;
+
+                &::after {
+                    width: 220px;
+                    right: -3rem;
+                }
+            }
+        }
+    }
+}
