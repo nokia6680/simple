@@ -1,48 +1,32 @@
-// init Isotope
-var $grid = $('.grid').isotope({
-    layoutMode: 'masonry',
-    itemSelector: '.blog__item',
-    fitWidth: true,
+var $cell = $('.net-item');
 
-    masonry: {
-        columnWidth: 335,
-        gutter: 18,
-    },
+//open and close card when clicked on card
+$cell.find('.js-expander').click(function() {
 
-    getSortData: {
-        date: function($elem) {
-            return Date.parse($($elem).find('.blog__item-time').attr('data-time'));
-        },
-    },
+    var $thisCell = $(this).closest('.net-item');
 
-    sortAscending: {
-        date: false
+    if ($thisCell.hasClass('is-collapsed')) {
+        $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
+        $thisCell.removeClass('is-collapsed').addClass('is-expanded');
+
+        if ($cell.not($thisCell).hasClass('is-inactive')) {
+            //do nothing
+        } else {
+            $cell.not($thisCell).addClass('is-inactive');
+        }
+
+    } else {
+        $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+        $cell.not($thisCell).removeClass('is-inactive');
     }
 });
 
-$grid.imagesLoaded().progress(function() {
-    $grid.isotope('layout');
-});
+//close card when click on cross
+$cell.find('.js-collapser').click(function() {
 
-$('.item-filter').on('click', 'button', function() {
-    var filterValue = $(this).attr('data-filter');
-    $grid.isotope({
-        filter: filterValue
-    });
-});
+    var $thisCell = $(this).closest('.net-item');
 
-//bind sort button click
-$('.item-sort').on('click', 'button', function() {
-    var sortByValue = $(this).attr('data-sort-by');
-    $grid.isotope({
-        sortBy: sortByValue
-    });
-});
-// change is-checked class on buttons
-$('.filter').each( function( i, buttonGroup ) {
-  var $buttonGroup = $( buttonGroup );
-  $buttonGroup.on( 'click', 'button', function() {
-    $buttonGroup.find('.active').removeClass('active');
-    $( this ).addClass('active');
-  });
+    $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+    $cell.not($thisCell).removeClass('is-inactive');
+
 });

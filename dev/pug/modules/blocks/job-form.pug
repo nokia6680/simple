@@ -1,0 +1,21 @@
+.apply-popup
+    .apply-popup__wrapper
+        button(type="button").apply-popup__closer
+        form(action="#" method="get").apply-popup__form
+            ul.apply-popup__list
+                li.apply-popup__item
+                    label(for="job-name")
+                    input(type="text" name="job-name" id="job-name" placeholder="Имя*").apply-popup__input
+                    span.apply-popup__error
+                li.apply-popup__item
+                    label(for="job-name")
+                    input(type="email" name="job-mail" id="job-mail" placeholder="Электронная почта*").apply-popup__input
+                    span.apply-popup__error
+                li.apply-popup__item
+                    label(for="job-name")
+                    input(type="text" name="job-city" id="job-city" placeholder="Город*").apply-popup__input
+                    span.apply-popup__error
+            button(type="submit").apply-popup__submit Отправить
+        
+        .apply-popup__reaction
+            p.apply-popup__text Спасибо, ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.

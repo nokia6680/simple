@@ -11,29 +11,34 @@ html(lang="ru-RU")
 		<![endif]-->
 		meta(name="viewport" content="width=device-width,initial-scale=1")
 		meta(name="keywords" content="")
+		link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
 		link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
 		link(rel="stylesheet" type='text/css' href="static/css/styles.css")
 		link(rel="preconnect" href="https://fonts.googleapis.com")
 		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
 		link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet")
+		script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=3a6e1b47-2a4a-499c-b8fb-09baac156118" type="text/javascript")
 
 	body.body
 		main.main
 			section.net-intro
-				.net-intro__wrapper
-					picture.net-intro__frame
-						source(media="(min-width: 1200px)" srcset="static/image/content/new-intro-bg.webp" type="image/webp")
-						source(media="(min-width: 1200px)" srcset="static/image/content/new-intro-bg.jpg")
-						source(srcset="static/image/content/new-intro-bg-mb.webp" type="image/webp")
-						img(src="static/image/content/new-intro-bg-mb.webp" alt="Simple Partner Network Image")
-					.net-intro__info
-						h1.net-intro__title Партнёрская сеть
-						b.net-intro__subtitle Wine and Whiskey by Simple
+				picture.net-intro__frame
+					source(media="(min-width: 1200px)" srcset="static/images/content/net-intro-bg.webp" type="image/webp")
+					source(media="(min-width: 1200px)" srcset="static/images/content/net-intro-bg.jpg")
+					source(srcset="static/images/content/net-intro-bg-mb.webp" type="image/webp")
+					img(src="static/images/content/net-intro-bg-mb.jpg" alt="Simple Partner Network Image").net-intro__frame-image
+				.net-intro__info
+					h1.net-intro__title Партнёрская сеть
+					b.net-intro__subtitle Wine and Whiskey by Simple
+					
 			section.net-stores
-				.net-stores__wrapper
-					ul.net-stores__list
-						li.net-stores__item.is-collapsed
-							
+				ul.net-stores__list
+					+netItemSingle('Владивосток', 'store-1', 'gallery-1', 'gallery-1', 'gallery-1', 'г. Владивосток, ул. Пограничная дом 10', '74232229292', '+7 (423) 222‒92‒92', 'Пн-вс 11:00-22:00', '#', 'review-1', 'Портфель SimpleWine один из наиболее обширных и качественных не только в России, но и в Европе. В нашем бутике представлено 600 наименований вин и крепких напитков со всех уголков мира. Мы тщательно выбираем алкоголь, соответствующий предпочтениям гостей на любой вкус. Очень приятно быть частью такой компании и развивать это направление в своём городе. ', '— Хворостова Наталия', 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d18425.92124993832!2d20.606311599999998!3d54.7405792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1639345015220!5m2!1sru!2sru')
+					+netItemSingle('Калуга', 'store-2', 'gallery-1', 'gallery-1', 'gallery-1', 'г. Калуга, ул. Лесная дом 10', '74232229292', '+7 (423) 222‒92‒92', 'Пн-вс 11:00-22:00', '#', 'review-1', 'Портфель SimpleWine один из наиболее обширных и качественных не только в России, но и в Европе. В нашем бутике представлено 600 наименований вин и крепких напитков со всех уголков мира. Мы тщательно выбираем алкоголь, соответствующий предпочтениям гостей на любой вкус. Очень приятно быть частью такой компании и развивать это направление в своём городе. ', '— Хворостова Наталия', 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d18425.92124993832!2d20.606311599999998!3d54.7405792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1639345015220!5m2!1sru!2sru')
+			include ../modules/blocks/job-form
 		script(src="static/js/vendor/jquery-3.3.1.min.js")
+		script(src="https://unpkg.com/swiper/swiper-bundle.js")
+		script(src="static/js/slider.js")
+		script(src="static/js/grid.js")
 		script(src="static/js/main.js")
 		block script

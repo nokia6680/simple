@@ -1,0 +1,15 @@
+.net-stores {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding: 0 20px;
+
+    &__list {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        gap: 40px;
+    }
+}

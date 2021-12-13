@@ -10,85 +10,35 @@ window.addEventListener('resize', () => {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
-var joinOpener = document.querySelector('.js-test-form-join');
-var joinOverlay = document.querySelector('.popup-join');
-var joinCloser = document.querySelector('.join__closer');
+var upperItem = document.getElementsByClassName('js-map');
+var elNodes = document.querySelectorAll(".js-map");
+var netItem = document.querySelector('.net-item');
 
-var orderOpener = document.querySelector('.order__start');
-var orderCloser = document.querySelector('.order__closer');
-var orderWrapper = document.querySelector('.order');
-var orderForm = document.querySelector('.order__form');
-var orderFormList = document.querySelector('.order__list');
-var orderFormSubmit = document.querySelector('.order__submit');
-
-if (joinOpener) {
-    joinOpener.addEventListener('click', function() {
+for (var i = 0; i < upperItem.length; i++) {
+    var elem = upperItem[i];
+    elem.addEventListener("click", function() {
         event.preventDefault();
-        joinOverlay.classList.add('active');
+        this.classList.toggle('active');
+        netItem.classList.toggle("mapOpened");
     });
-};
+}
 
-if (joinCloser) {
-    joinCloser.addEventListener('click', function() {
+var upperItem2 = document.getElementsByClassName('js-vacant');
+var elNodes = document.querySelectorAll(".js-vacant");
+var applyForm = document.querySelector('.apply-popup');
+var applyCloser = document.querySelector('.apply-popup__closer');
+
+for (var i = 0; i < upperItem2.length; i++) {
+    var elem = upperItem2[i];
+    elem.addEventListener("click", function() {
         event.preventDefault();
-        joinOverlay.classList.remove('active');
+        applyForm.classList.add('active');
     });
-};
+}
 
-if (orderOpener) {
-    orderOpener.addEventListener('click', function() {
+if (applyCloser) {
+    applyCloser.addEventListener('click', function() {
         event.preventDefault();
-        orderOpener.classList.add('pressed');
-
-        setTimeout(function() {
-            return orderOpener.classList.add('inactive');
-        }, 250);
-
-        setTimeout(function() {
-            return orderWrapper.classList.add('prepare');;
-        }, 250);
-
-        setTimeout(function() {
-            return orderWrapper.classList.remove('inactive');;
-        }, 250);
-
-        setTimeout(function() {
-            return orderWrapper.classList.add('visible');;
-        }, 250);
-
-        setTimeout(function() {
-            return orderFormList.classList.add('visible');;
-        }, 500);
-    });
-};
-
-if (orderCloser) {
-    orderCloser.addEventListener('click', function() {
-        event.preventDefault();
-        orderFormList.classList.remove('visible');
-
-        setTimeout(function() {
-            return orderWrapper.classList.remove('visible');
-        }, 250);
-
-        setTimeout(function() {
-            return orderWrapper.classList.remove('prepare');
-        }, 250);
-
-        setTimeout(function() {
-            return orderWrapper.classList.add('inactive');
-        }, 250);
-
-        setTimeout(function() {
-            return orderWrapper.classList.remove('prepare');;
-        }, 250);
-
-        setTimeout(function() {
-            return orderOpener.classList.remove('inactive');
-        }, 250);
-
-        setTimeout(function() {
-            return orderOpener.classList.remove('pressed');
-        }, 250);
+        applyForm.classList.remove('active');
     });
 };
