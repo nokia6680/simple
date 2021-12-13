@@ -23,8 +23,8 @@ html(lang="ru-RU")
 		main.main
 			section.net-intro
 				picture.net-intro__frame
-					source(media="(min-width: 1200px)" srcset="static/images/content/net-intro-bg.webp" type="image/webp")
-					source(media="(min-width: 1200px)" srcset="static/images/content/net-intro-bg.jpg")
+					source(media="(min-width: 768px)" srcset="static/images/content/net-intro-bg.webp" type="image/webp")
+					source(media="(min-width: 768px)" srcset="static/images/content/net-intro-bg.jpg")
 					source(srcset="static/images/content/net-intro-bg-mb.webp" type="image/webp")
 					img(src="static/images/content/net-intro-bg-mb.jpg" alt="Simple Partner Network Image").net-intro__frame-image
 				.net-intro__info
@@ -33,12 +33,16 @@ html(lang="ru-RU")
 					
 			section.net-stores
 				ul.net-stores__list
-					+netItemSingle('Владивосток', 'store-1', 'gallery-1', 'gallery-1', 'gallery-1', 'г. Владивосток, ул. Пограничная дом 10', '74232229292', '+7 (423) 222‒92‒92', 'Пн-вс 11:00-22:00', '#', 'review-1', 'Портфель SimpleWine один из наиболее обширных и качественных не только в России, но и в Европе. В нашем бутике представлено 600 наименований вин и крепких напитков со всех уголков мира. Мы тщательно выбираем алкоголь, соответствующий предпочтениям гостей на любой вкус. Очень приятно быть частью такой компании и развивать это направление в своём городе. ', '— Хворостова Наталия', 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d18425.92124993832!2d20.606311599999998!3d54.7405792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1639345015220!5m2!1sru!2sru')
-					+netItemSingle('Калуга', 'store-2', 'gallery-1', 'gallery-1', 'gallery-1', 'г. Калуга, ул. Лесная дом 10', '74232229292', '+7 (423) 222‒92‒92', 'Пн-вс 11:00-22:00', '#', 'review-1', 'Портфель SimpleWine один из наиболее обширных и качественных не только в России, но и в Европе. В нашем бутике представлено 600 наименований вин и крепких напитков со всех уголков мира. Мы тщательно выбираем алкоголь, соответствующий предпочтениям гостей на любой вкус. Очень приятно быть частью такой компании и развивать это направление в своём городе. ', '— Хворостова Наталия', 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d18425.92124993832!2d20.606311599999998!3d54.7405792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1639345015220!5m2!1sru!2sru')
+					+netItemMultiple('net-item is-collapsed', 'Москва', 'store-2')
+					+netItemMultiple('net-item is-collapsed', 'Красноярск', 'store-1')
+
+					+netItemSingle('net-item is-collapsed', 'js-expander', 'js-collapser', 'Владивосток', 'store-1', 'gallery-1', 'gallery-1', 'gallery-1', 'г. Владивосток, ул. Пограничная дом 10', '74232229292', '+7 (423) 222‒92‒92', 'Пн-вс 11:00-22:00', '#', 'review-1', 'Портфель SimpleWine один из наиболее обширных и качественных не только в России, но и в Европе. В нашем бутике представлено 600 наименований вин и крепких напитков со всех уголков мира. Мы тщательно выбираем алкоголь, соответствующий предпочтениям гостей на любой вкус. Очень приятно быть частью такой компании и развивать это направление в своём городе. ', '— Хворостова Наталия', '')
+					+netItemSingle('net-item is-collapsed', 'js-expander', 'js-collapser', 'Калуга', 'store-2', 'gallery-1', 'gallery-1', 'gallery-1', 'г. Калуга, ул. Лесная дом 10', '74232229292', '+7 (423) 222‒92‒92', 'Пн-вс 11:00-22:00', '#', 'review-1', 'Портфель SimpleWine один из наиболее обширных и качественных не только в России, но и в Европе. В нашем бутике представлено 600 наименований вин и крепких напитков со всех уголков мира. Мы тщательно выбираем алкоголь, соответствующий предпочтениям гостей на любой вкус. Очень приятно быть частью такой компании и развивать это направление в своём городе. ', '— Хворостова Наталия', '')
 			include ../modules/blocks/job-form
 		script(src="static/js/vendor/jquery-3.3.1.min.js")
 		script(src="https://unpkg.com/swiper/swiper-bundle.js")
 		script(src="static/js/slider.js")
+		script(src="static/js/map.js")
 		script(src="static/js/grid.js")
 		script(src="static/js/main.js")
 		block script

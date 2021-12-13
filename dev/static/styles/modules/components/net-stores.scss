@@ -4,6 +4,8 @@
     @include flex-setting(column, flex-start, center);
 
     padding: 0 20px;
+    overflow: hidden;
+    padding-bottom: 8rem;
 
     &__list {
         width: 100%;
@@ -11,5 +13,33 @@
         @include flex-setting(column, flex-start, center);
 
         gap: 40px;
+    }
+}
+
+@include min-screen(730px) {
+    .net-stores {
+        padding: 0 40px;
+        padding-bottom: 80px;
+
+        &__list {
+            max-width: 1160px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .net-stores {
+        padding: 0;
+        padding-bottom: 8rem;
+
+        &__list {
+            max-width: 1160px;
+        }
     }
 }

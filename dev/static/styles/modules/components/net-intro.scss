@@ -62,3 +62,61 @@
         @include font-setting($roboto-font, 18px, 21px, 500, $white);
     }
 }
+
+@include min-screen(730px) {
+    .net-intro {
+        margin-bottom: 60px;
+
+        &__frame {
+            padding-bottom: 56.25%;
+        }
+
+        &__info {
+            padding: 0 40px 45px 40px;
+        }
+
+        &__title {
+            font-size: 60px;
+            line-height: 70px;
+            margin-bottom: 10px;
+        }
+
+        &__subtitle {
+            font-size: 40px;
+            line-height: 47px;
+        }
+    }
+}
+
+@include min-screen(991px) {
+    .net-intro {
+        margin-bottom: 100px;
+
+        &__frame {
+            padding-bottom: 25%;
+        }
+
+        &__info {
+            max-width: 1160px;
+            padding: 0 40px 45px 40px;
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .net-intro {
+        margin-bottom: 100px;
+
+        &__frame {
+            padding-bottom: 25%;
+        }
+
+        &__info {
+            justify-content: center;
+            padding: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

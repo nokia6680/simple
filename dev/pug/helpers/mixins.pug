@@ -1,17 +1,16 @@
-mixin netItemSingle(city, image, galleryImage1, galleryImage2, galleryImage3, address, phoneLink, phone, timing, link, reviewImage, reviewText, reviewAuthor, mapLink)
-    li(class="net-stores__item net-item is-collapsed single")
+mixin netItemSingle(type, innerClass, closerClass, city, image, galleryImage1, galleryImage2, galleryImage3, address, phoneLink, phone, timing, link, reviewImage, reviewText, reviewAuthor, mapLink)
+    li(class="net-stores__item single " +type)
         <!--Front side of card-->
-        .net-item__inner.js-expander
+        div(class="net-item__inner " +innerClass)
             picture.net-item__frame
                 source(srcset="static/images/content/" +image +".webp" type="image/webp")
                 img(src="static/images/content/" +image + ".jpg" alt="Винная студия - " +city).net-item__frame-image
             h3.net-item__title=city
         <!--Back side of card-->
         .net-item__content
-            button(type="button").net-item__content-closer.js-collapser
+            button(type="button" class="net-item__content-closer " +closerClass)
             
             h2.net-item__address=address
-            
             
             .net-item__gallery
                 .net-item__slider.net-swiper-container
@@ -57,5 +56,22 @@ mixin netItemSingle(city, image, galleryImage1, galleryImage2, galleryImage3, ad
                 button(type="button").net-item__controls-btn.js-map Как добраться
                 a(href="#" target="_self").net-item__controls-link Франшиза
             .net-item__map
-                iframe(src="" +mapLink allowfullscreen="" loading="lazy").net-item__map-frame
+                .net-item__map-frame#map
             
+mixin netItemMultiple(type, city, image)
+    li(class="net-stores__item multiple " +type)
+        <!--Front side of card-->
+        .net-item__inner.js-expander
+            picture.net-item__frame
+                source(srcset="static/images/content/" +image +".webp" type="image/webp")
+                img(src="static/images/content/" +image + ".jpg" alt="Винная студия - " +city).net-item__frame-image
+            h3.net-item__title=city
+        <!--Back side of card-->
+        
+        .net-item__content
+            ul.net-item__sublist
+                +netItemSingle('net-subitem sub-collapsed', 'sub-expander', 'sub-collapser','Беговая', 'store-1', 'gallery-1', 'gallery-1', 'gallery-1', 'г. Владивосток, ул. Пограничная дом 10', '74232229292', '+7 (423) 222‒92‒92', 'Пн-вс 11:00-22:00', '#', 'review-1', 'Портфель SimpleWine один из наиболее обширных и качественных не только в России, но и в Европе. В нашем бутике представлено 600 наименований вин и крепких напитков со всех уголков мира. Мы тщательно выбираем алкоголь, соответствующий предпочтениям гостей на любой вкус. Очень приятно быть частью такой компании и развивать это направление в своём городе. ', '— Хворостова Наталия', '')
+                +netItemSingle('net-subitem sub-collapsed', 'sub-expander', 'sub-collapser',  'Восточная', 'store-2', 'gallery-1', 'gallery-1', 'gallery-1', 'г. Владивосток, ул. Пограничная дом 10', '74232229292', '+7 (423) 222‒92‒92', 'Пн-вс 11:00-22:00', '#', 'review-1', 'Портфель SimpleWine один из наиболее обширных и качественных не только в России, но и в Европе. В нашем бутике представлено 600 наименований вин и крепких напитков со всех уголков мира. Мы тщательно выбираем алкоголь, соответствующий предпочтениям гостей на любой вкус. Очень приятно быть частью такой компании и развивать это направление в своём городе. ', '— Хворостова Наталия', '')
+                +netItemSingle('net-subitem sub-collapsed', 'sub-expander', 'sub-collapser',  'Мира', 'store-1', 'gallery-1', 'gallery-1', 'gallery-1', 'г. Владивосток, ул. Пограничная дом 10', '74232229292', '+7 (423) 222‒92‒92', 'Пн-вс 11:00-22:00', '#', 'review-1', 'Портфель SimpleWine один из наиболее обширных и качественных не только в России, но и в Европе. В нашем бутике представлено 600 наименований вин и крепких напитков со всех уголков мира. Мы тщательно выбираем алкоголь, соответствующий предпочтениям гостей на любой вкус. Очень приятно быть частью такой компании и развивать это направление в своём городе. ', '— Хворостова Наталия', '')
+                +netItemSingle('net-subitem sub-collapsed', 'sub-expander', 'sub-collapser',  'Садовая', 'store-1', 'gallery-1', 'gallery-1', 'gallery-1', 'г. Владивосток, ул. Пограничная дом 10', '74232229292', '+7 (423) 222‒92‒92', 'Пн-вс 11:00-22:00', '#', 'review-1', 'Портфель SimpleWine один из наиболее обширных и качественных не только в России, но и в Европе. В нашем бутике представлено 600 наименований вин и крепких напитков со всех уголков мира. Мы тщательно выбираем алкоголь, соответствующий предпочтениям гостей на любой вкус. Очень приятно быть частью такой компании и развивать это направление в своём городе. ', '— Хворостова Наталия', '')
+            button(type="button").net-item__content-closer.js-collapser
