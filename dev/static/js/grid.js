@@ -4,6 +4,9 @@ var $cell = $('.net-item');
 $cell.find('.js-expander').click(function() {
 
     var $thisCell = $(this).closest('.net-item');
+    $('body').animate({
+        scrollTop: $($thisCell.find('.net-item__content')).offset().top
+    }, 2000);
 
     if ($thisCell.hasClass('is-collapsed')) {
         $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');

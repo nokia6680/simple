@@ -14,6 +14,12 @@
 
         gap: 40px;
     }
+
+    &.no-review-photo {
+        .net-stores__review-frame {
+            display: none;
+        }
+    }
 }
 
 @include min-screen(730px) {

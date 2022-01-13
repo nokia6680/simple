@@ -1,16 +1,17 @@
 .net-item {
     width: 100%;
     @include flex-setting(column, flex-start, center);
-
     transition: all 0.4s $cubic;
+    position: relative;
+
+    &__disclaimer {
+        display: none;
+    }
 
     &__inner {
         width: 100%;
-
         @include flex-setting(column, flex-start, flex-start);
-
         position: relative;
-
         transition: all 0.4s $cubic;
     }
 
@@ -19,32 +20,26 @@
         height: 0;
         padding-bottom: 62.5%;
         position: relative;
-
         cursor: pointer;
         outline: none;
 
         &-image {
             width: 100%;
             height: 100%;
-
             position: absolute;
-
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-
             object-fit: cover;
         }
 
         &::after {
             position: absolute;
             content: '';
-
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.34) 100%);
-
             bottom: 0;
             left: 0;
             transition: all 0.4s $cubic;
@@ -53,20 +48,17 @@
         &::before {
             position: absolute;
             content: '';
-
             width: 100%;
             height: 100%;
-
             background-color: #D12C7B;
-
             top: 0;
             left: 0;
             opacity: 0;
             transition: 0.4s $cubic;
         }
 
-        &:hover,
-        &:active {
+        &:active,
+        &:hover {
             &::before {
                 opacity: 1;
                 top: 10px;
@@ -78,7 +70,6 @@
 
     &__title {
         @include font-setting($helve-font, 22px, 27px, 700, $white);
-
         position: absolute;
         bottom: 24px;
         left: 20px;
@@ -86,38 +77,30 @@
 
     &__content {
         width: 100%;
-
         @include flex-setting(column, flex-start, flex-start);
-
         padding-left: 3px;
         padding-right: 3px;
-
         position: relative;
 
         &-closer {
             position: absolute;
             top: 50px;
             right: 3px;
-
             width: 20px;
             height: 20px;
-
             background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='-0.625' x2='19' y2='-0.625' transform='matrix(0.707107 0.707107 0.707107 -0.707107 1.28125 0.38665)' stroke='black' stroke-width='1.25'/%3E%3Cline x1='0.839308' y1='14.3797' x2='14.2743' y2='0.944704' stroke='black' stroke-width='1.25'/%3E%3C/svg%3E");
             background-position: 50% 50%;
             background-repeat: no-repeat;
             background-size: 80%;
             background-color: transparent;
             border: none;
-
             cursor: pointer;
             outline: none;
-
             transition: 0.4s $cubic;
-
             z-index: 10;
 
-            &:hover,
-            &:active {
+            &:active,
+            &:hover {
                 background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='-0.625' x2='19' y2='-0.625' transform='matrix(0.707107 0.707107 0.707107 -0.707107 1.28125 0.38665)' stroke='%23e6007e' stroke-width='1.25'/%3E%3Cline x1='0.839308' y1='14.3797' x2='14.2743' y2='0.944704' stroke='%23e6007e' stroke-width='1.25'/%3E%3C/svg%3E");
                 transition: 0.4s $cubic;
             }
@@ -133,54 +116,44 @@
 
     &__gallery {
         width: 100%;
-
         @include flex-setting(column, flex-start, center);
-
         margin-bottom: 30px;
 
         &-controls {
             width: auto;
             @include flex-setting(row, center, center);
-
             position: relative;
 
             &::after {
                 position: absolute;
                 content: '';
-
                 width: 40px;
                 height: 1px;
-
                 background-color: #E6007E;
                 box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.13);
-
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
         }
 
-        &-prev,
-        &-next {
+        &-next,
+        &-prev {
             width: 30px;
             height: 30px;
-
             border-radius: 15px;
             border: 1px solid #E6007E;
-
             background-color: $white;
             background-position: 50% 50%;
             background-repeat: no-repeat;
             background-size: 20%;
-
             opacity: 0.5;
             transition: 0.4s $cubic;
-
             cursor: pointer;
             outline: none;
 
-            &:hover,
-            &:active {
+            &:active,
+            &:hover {
                 opacity: 1;
                 transition: 0.4s $cubic;
             }
@@ -216,7 +189,6 @@
                 left: 0;
                 bottom: 0;
                 right: 0;
-
                 object-fit: cover;
             }
         }
@@ -224,25 +196,18 @@
 
     &__list {
         width: 100%;
-
         @include flex-setting(column, flex-start, flex-start);
-
         gap: 20px;
-
         padding-bottom: 42px;
         margin-bottom: 42px;
-
         position: relative;
 
         &::after {
             position: absolute;
             content: '';
-
             width: calc(100% - 6px);
             height: 1px;
-
             border-top: 1px solid #A8A8A8;
-
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
@@ -257,6 +222,7 @@
 
         .net-subitem {
             width: calc((100% / 2) - 10px);
+            position: relative;
 
             &:nth-of-type(2n+2) {
                 .net-item__content {
@@ -294,7 +260,6 @@
                     left: 50%;
                     bottom: auto;
                     transform: translate(-50%, -50%);
-
                     font-size: 12px;
                     line-height: 14px;
                 }
@@ -327,6 +292,61 @@
                     position: relative;
                 }
             }
+
+            &.empty {
+                &.sub-expanded {
+                    .net-item__content {
+                        max-height: 0;
+                        min-height: 0;
+                        overflow: hidden;
+                        margin: 0;
+                        opacity: 0;
+                        transition: all 0.4s $cubic;
+                        padding-top: 0;
+                        padding-bottom: 0;
+                    }
+
+                    .net-item__frame {
+                        margin-bottom: 0;
+                    }
+
+                    .net-item__disclaimer {
+                        width: 100%;
+                        display: inline-flex;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        @include flex-setting(column, center, center);
+                        @include font-setting($roboto-font, 0.5rem, 1.2, 400, $black);
+                        padding: 0.625rem 0;
+                        background-color: rgba(255, 255, 255, 0.9);
+                        text-align: center;
+                        z-index: 2;
+                    }
+
+                    .net-item__frame::before {
+                        opacity: 0;
+                        top: 0;
+                        left: 0;
+                        transition: 0.4s $cubic;
+                    }
+
+                    .net-item__frame::after {
+                        background: rgba(0, 0, 0, 0.8);
+                        transition: 0.4s $cubic;
+                    }
+
+                    .net-item__title {
+                        top: auto;
+                        left: auto;
+                        bottom: auto;
+                        transform: none;
+                        transform-origin: center;
+                        display: none;
+                    }
+                }
+            }
         }
     }
 
@@ -335,25 +355,64 @@
         @include flex-setting(column, flex-start, flex-start);
 
         &:last-of-type {
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-
             .net-item__name {
-                margin-bottom: 0;
-                margin-right: 10px;
+                margin-bottom: 14px;
+                margin-right: 0;
+            }
+
+            .net-item__icons {
+                width: auto;
+                @include flex-setting(row, center, center);
             }
 
             .net-item__data {
                 position: relative;
+                margin-right: 10px;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
 
                 .fa-instagram::before {
                     content: '\f16d';
-
                     color: $black;
                     font-size: 16px;
                     transition: 0.4s $cubic;
                     z-index: 1;
+                }
+
+                .fa-facebook-f::before {
+                    content: '\f39e';
+                    color: $black;
+                    font-size: 16px;
+                    transition: 0.4s $cubic;
+                    z-index: 1;
+                }
+
+                .fa-vk::before {
+                    content: '\f189';
+                    color: $black;
+                    font-size: 20px;
+                    transition: 0.4s $cubic;
+                    z-index: 1;
+                }
+
+                &:active,
+                &:hover {
+                    .fa-instagram::before {
+                        color: #E6007E;
+                        transition: 0.4s $cubic;
+                    }
+
+                    .fa-facebook-f::before {
+                        color: #E6007E;
+                        transition: 0.4s $cubic;
+                    }
+
+                    .fa-vk::before {
+                        color: #E6007E;
+                        transition: 0.4s $cubic;
+                    }
                 }
             }
         }
@@ -371,16 +430,13 @@
 
     &__review {
         width: 100%;
-
         @include flex-setting(column, flex-start, center);
-
         margin-bottom: 40px;
 
         &-frame {
             @include flex-setting(column, center, center);
             width: 110px;
             height: 120px;
-
             margin-bottom: 30px;
 
             img {
@@ -398,7 +454,6 @@
         &-text {
             @include font-setting($helve-font, 16px, 22px, 400, $black);
             text-align: left;
-
             margin-bottom: 16px;
         }
 
@@ -406,35 +461,47 @@
             align-self: flex-start;
             @include font-setting($helve-font, 18px, 21px, 500, $black);
         }
+
+        &-title {
+            @include font-setting($helve-font, 12px, 15px, 500, $black);
+            font-size: italic;
+            padding-left: 20px;
+        }
+    }
+
+    &.no-review-photo {
+        .net-item__review-frame img {
+            display: none;
+        }
+
+        .net-item__review-frame {
+            background-image: url("data:image/svg+xml,%3Csvg width='39' height='32' viewBox='0 0 39 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.72 32.4C9.6 30.72 15.12 24.72 15.12 14.04V0H0V15.12H8.28C8.28 20.28 6.12 24.24 0.72 25.56V32.4ZM24.36 32.4C33.24 30.72 38.76 24.72 38.76 14.04V0H23.64V15.12H31.92C31.92 20.28 29.88 24.24 24.36 25.56V32.4Z' fill='black'/%3E%3C/svg%3E%0A");
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: 70%;
+        }
     }
 
     &__controls {
         width: 100%;
-
         @include flex-setting(column, flex-start, center);
         padding-bottom: 50px;
         margin-bottom: 50px;
-
         border-bottom: 1px solid #A8A8A8;
 
         &-btn {
             width: 100%;
-
             @include flex-setting(column, center, center);
             @include font-setting($helve-font, 14px, 17px, 500, #E6007E);
-
             height: 45px;
-
             margin-bottom: 40px;
-
             background-color: $white;
             border: 1px solid #E6007E;
-
             cursor: pointer;
             transition: 0.4s $cubic;
 
-            &:hover,
-            &:active {
+            &:active,
+            &:hover {
                 background-color: #E6007E;
                 color: $white;
                 transition: 0.4s $cubic;
@@ -451,14 +518,12 @@
             @include font-setting($helve-font, 14px, 17px, 500, #E6007E);
             text-decoration: none;
             padding: 3px 0;
-
             position: relative;
             transition: 0.4s $cubic;
 
             &::after {
                 position: absolute;
                 content: '';
-
                 width: 100%;
                 height: 1px;
                 background-color: #E6007E;
@@ -469,8 +534,8 @@
                 transition: 0.4s $cubic;
             }
 
-            &:hover,
-            &:active {
+            &:active,
+            &:hover {
                 &::after {
                     transform: scaleX(1);
                     transform-origin: center;
@@ -484,24 +549,19 @@
         width: 100%;
         height: 0;
         position: relative;
-
         padding-bottom: 0;
         overflow: hidden;
-
         transition: all 0.4s $cubic;
 
         &-frame {
             position: absolute;
             width: 100%;
             height: 100%;
-
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-
             object-fit: contain;
-
             border: none;
         }
 
@@ -519,10 +579,12 @@
             margin: 0;
             opacity: 0;
             transition: all 0.4s $cubic;
+            transform-origin: top;
         }
     }
 
     &.is-expanded {
+        transform-origin: top;
         .net-item__frame::before {
             opacity: 1;
             top: 10px;
@@ -551,18 +613,14 @@
             padding-top: 50px;
             opacity: 1;
             transition: all 0.4s $cubic;
-
             position: relative;
 
             &::after {
                 position: absolute;
                 content: '';
-
                 width: calc(100% - 6px);
                 height: 1px;
-
                 border-top: 1px solid #A8A8A8;
-
                 top: 0;
                 left: 50%;
                 transform: translateX(-50%);
@@ -615,8 +673,58 @@
             transition: all 0.4s $cubic;
         }
     }
-}
 
+    &.empty {
+        &.is-expanded {
+            .net-item__content {
+                max-height: 0;
+                min-height: 0;
+                overflow: hidden;
+                margin: 0;
+                opacity: 0;
+                transition: all 0.4s $cubic;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .net-item__disclaimer {
+                width: 100%;
+                display: inline-flex;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @include flex-setting(column, center, center);
+                @include font-setting($roboto-font, 1.125rem, 1.2, 400, $black);
+                padding: 1.25rem 0;
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.7);
+                z-index: 2;
+            }
+
+            .net-item__frame::before {
+                opacity: 0;
+                top: 0;
+                left: 0;
+                transition: 0.4s $cubic;
+            }
+
+            .net-item__frame::after {
+                background: rgba(0, 0, 0, 0.8);
+                transition: 0.4s $cubic;
+            }
+
+            .net-item__title {
+                top: auto;
+                left: auto;
+                bottom: auto;
+                transform: none;
+                transform-origin: center;
+                opacity: 0;
+            }
+        }
+    }
+}
 @include min-screen(730px) {
     .net-item {
         width: calc((100% / 2) - 20px);
@@ -641,7 +749,6 @@
             position: relative;
             left: auto;
             bottom: auto;
-
             color: $black;
             font-size: 26px;
             line-height: 26px;
@@ -685,12 +792,21 @@
 
         &__sublist {
             width: 100%;
-            @include flex-setting(row, space-between, flex-start);
+            @include flex-setting(row, flex-start, flex-start);
             flex-wrap: wrap;
-            gap: 10px;
+            --widthItem: calc((100% / 3) - 10px);
+            gap: calc((100% - (var(--widthItem) * 3)) / 2);
 
             .net-subitem {
-                width: calc((100% / 3) - 10px);
+                width: var(--widthItem);
+
+                &:nth-of-type(3n+1) {
+                    .net-item__content {
+                        margin-left: 0;
+                        clear: left;
+                        width: calc(300% + 30px);
+                    }
+                }
 
                 &:nth-of-type(2n+2) {
                     .net-item__content {
@@ -759,12 +875,6 @@
                             background: rgba(0, 0, 0, 0.4);
                             transition: 0.4s $cubic;
                         }
-
-                        .net-item__title {
-                            font-size: 16px;
-                            line-height: 18px;
-                            transition: 0.4s linear;
-                        }
                     }
                 }
 
@@ -790,7 +900,65 @@
                         font-size: 14px;
                         color: #D12C7B;
                         transition: 0.4s linear;
-                        position: relative;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                &.empty {
+                    &.sub-expanded {
+                        .net-item__content {
+                            max-height: 0;
+                            min-height: 0;
+                            overflow: hidden;
+                            margin: 0;
+                            opacity: 0;
+                            transition: all 0.4s $cubic;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                        }
+
+                        .net-item__frame {
+                            margin-bottom: 0;
+                        }
+
+                        .net-item__disclaimer {
+                            width: 100%;
+                            display: inline-flex;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            @include flex-setting(column, center, center);
+                            @include font-setting($roboto-font, 0.5rem, 1.2, 400, $black);
+                            padding: 0.625rem 0;
+                            background-color: rgba(255, 255, 255, 0.9);
+                            text-align: center;
+                            z-index: 2;
+                        }
+
+                        .net-item__frame::before {
+                            opacity: 0;
+                            top: 0;
+                            left: 0;
+                            transition: 0.4s $cubic;
+                        }
+
+                        .net-item__frame::after {
+                            background: rgba(0, 0, 0, 0.8);
+                            transition: 0.4s $cubic;
+                        }
+
+                        .net-item__title {
+                            top: auto;
+                            left: auto;
+                            bottom: auto;
+                            transform: none;
+                            transform-origin: center;
+                            display: none;
+                        }
                     }
                 }
             }
@@ -799,8 +967,8 @@
         &__line {
             width: calc((100% / 2) - 20px);
 
-            &:nth-of-type(3),
-            &:last-of-type {
+            &:last-of-type,
+            &:nth-of-type(3) {
                 align-items: flex-end;
             }
 
@@ -828,17 +996,19 @@
             &-text {
                 margin-bottom: 10px;
             }
+
+            &-title {
+                font-size: 14px;
+                font-weight: 400;
+            }
         }
 
         &__controls {
             flex-direction: row;
             justify-content: flex-start;
-
             align-items: center;
-
             padding-bottom: 0;
-            margin-bottom: 0;
-
+            margin-bottom: 40px;
             border: none;
 
             &-btn {
@@ -861,22 +1031,76 @@
                 padding-top: 30px;
                 padding-bottom: 30px;
             }
+
+            .net-item__title {
+                position: relative;
+                left: auto;
+                bottom: auto;
+                transition: none;
+                transform: none;
+                color: $black;
+                font-size: 26px;
+                line-height: 26px;
+            }
         }
 
         &.multiple.is-expanded {
             .net-item__content {
                 border: none;
             }
+
+            .net-item__title {
+                position: relative;
+                left: auto;
+                bottom: auto;
+                transition: none;
+                transform: none;
+                color: $black;
+                font-size: 26px;
+                line-height: 26px;
+            }
+        }
+
+        &.multiple .sub-collapsed {
+            .net-item__title {
+                color: $white;
+                top: 50%;
+                left: 50%;
+                bottom: auto;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                font-size: 12px;
+                line-height: 14px;
+                transition: none;
+            }
+        }
+
+        &.empty {
+            &.is-expanded {
+                .net-item__disclaimer {
+                    top: 45%;
+                    font-size: 12px;
+                    text-align: center;
+                }
+
+                .net-item__title {
+                    top: auto;
+                    left: auto;
+                    bottom: auto;
+                    transform: none;
+                    transform-origin: center;
+                    opacity: 1;
+                    transition: none;
+                }
+            }
         }
     }
 }
-
 @include min-screen(1200px) {
     .net-item {
         &__content {
             padding: 0 114px;
             border: none;
-
             box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
 
             &-closer {
@@ -903,7 +1127,6 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-
                 width: 100%;
                 min-width: 1090px;
                 max-width: 1090px;
@@ -913,8 +1136,8 @@
                 }
             }
 
-            &-prev,
-            &-next {
+            &-next,
+            &-prev {
                 width: 40px;
                 height: 40px;
                 border-radius: 20px;
@@ -972,6 +1195,51 @@
                         position: relative;
                     }
                 }
+
+                &.empty {
+                    &.sub-expanded {
+                        .net-item__content {
+                            max-height: 0;
+                            min-height: 0;
+                            overflow: hidden;
+                            margin: 0;
+                            opacity: 0;
+                            transition: all 0.4s $cubic;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                        }
+
+                        .net-item__frame {
+                            margin-bottom: 0;
+                        }
+
+                        .net-item__disclaimer {
+                            font-size: 14px;
+                            padding: 20px 0;
+                        }
+
+                        .net-item__frame::before {
+                            opacity: 0;
+                            top: 0;
+                            left: 0;
+                            transition: 0.4s $cubic;
+                        }
+
+                        .net-item__frame::after {
+                            background: rgba(0, 0, 0, 0.8);
+                            transition: 0.4s $cubic;
+                        }
+
+                        .net-item__title {
+                            top: auto;
+                            left: auto;
+                            bottom: auto;
+                            transform: none;
+                            transform-origin: center;
+                            display: none;
+                        }
+                    }
+                }
             }
         }
 
@@ -988,7 +1256,6 @@
         }
 
         &__controls {
-
             &-btn {
                 margin-right: 50px;
 
@@ -1008,6 +1275,23 @@
         &.multiple.is-expanded {
             .net-item__content {
                 box-shadow: none;
+            }
+        }
+
+        &.empty {
+            &.is-expanded {
+                .net-item__disclaimer {
+                    font-size: 16px;
+                }
+
+                .net-item__title {
+                    top: auto;
+                    left: auto;
+                    bottom: auto;
+                    transform: none;
+                    transform-origin: center;
+                    opacity: 1;
+                }
             }
         }
     }

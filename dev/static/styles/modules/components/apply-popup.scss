@@ -18,6 +18,7 @@
     padding-left: 25px;
     padding-right: 25px;
     display: none;
+
     &.active {
         display: flex;
     }
@@ -65,7 +66,7 @@
 
     &__form {
         width: 100%;
-        @include flex-setting(column, flex-start, center);
+        @include flex-setting(column, center, center);
     }
 
     &__list {
@@ -122,20 +123,22 @@
 
     &__reaction {
         width: 100%;
+        align-self: center;
+        justify-self: center;
         @include flex-setting(column, center, center);
 
         min-height: 355px;
 
         display: none;
 
-        &-text {
-            @include font-setting($helve-font, 14px, 17px, 400, $black);
-            text-align: center;
-        }
-
         &.active {
             display: flex;
         }
+    }
+
+    &__text {
+        @include font-setting($helve-font, 14px, 17px, 400, $black);
+        text-align: center;
     }
 }
 
@@ -163,13 +166,11 @@
 
         &__reaction {
             min-height: 390px;
+        }
 
-            display: none;
-
-            &-text {
-                font-size: 16px;
-                line-height: 20px;
-            }
+        &__text {
+            font-size: 16px;
+            line-height: 20px;
         }
     }
 }
