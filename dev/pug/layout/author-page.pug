@@ -1,0 +1,51 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet")
+
+    body.body
+        main.main
+            section.author
+                .author__bio
+                    .author__head
+                        h1.author__title
+                            picture.author__frame
+                                source(media="(min-width: 1366px)" srcset="static/images/content/author-photo.webp" type="image/webp")
+                                source(media="(min-width: 1366px)" srcset="static/images/content/author-photo.jpg" type="image/webp")
+                                source(srcset="static/images/content/author-photo-mb.webp" type="image/webp")
+                                img(src="static/images/content/author-photo-mb.jpg" alt="").author__frame-image
+                        ul.author__data
+                            li.author__data-item
+                                span.author__data-title
+                                b.author__data-description
+                            li.author__data-item
+                                span.author__data-title
+                                b.author__data-description
+                        p.author__description
+                    .author__career
+                        picture.author__career-frame
+                            source(media="(min-width: 1366px)" srcset="static/images/content/author-photo-career.webp" type="image/webp")
+                            source(media="(min-width: 1366px)" srcset="static/images/content/author-photo-career.jpg" type="image/webp")
+                            source(srcset="static/images/content/author-photo-career-mb.webp" type="image/webp")
+                            img(src="static/images/content/author-photo-career-mb.jpg" alt="").author__frame-image
+                        .author__career-about
+                            p.author__career-description
+                            p.author__career-description
+                            p.author__career-description
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="static/js/main.js")
+        block script

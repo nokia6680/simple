@@ -1,0 +1,87 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet")
+
+    body.body
+        main.main
+            // Art Intro
+            section.intro-art
+                picture.intro-art__frame
+                    source(media="(min-width: 1366px)" srcset="static/images/content/intro-art.webp" type="image/webp")
+                    source(media="(min-width: 1366px)" srcset="static/images/content/intro-art.jpg" type="image/webp")
+                    source(srcset="static/images/content/intro-art-mb.webp" type="image/webp")
+                    img(src="static/images/content/intro-art-mb.jpg" alt="intro-art-image").intro-art__frame-image
+                .intro-art__info
+                    h1.intro-art__title Simple Art
+                    p.intro-art__description коллекция произведений художников из разных регионов России
+            // Art director
+            section.head-art
+                .head-art__wrapper
+                    picture.head-art__frame
+                        source(media="(min-width: 1366px)" srcset="static/images/content/head-art.webp" type="image/webp")
+                        source(media="(min-width: 1366px)" srcset="static/images/content/head-art.jpg" type="image/webp")
+                        source(srcset="static/images/content/head-art-mb.webp" type="image/webp")
+                        img(src="static/images/content/head-art-mb.jpg" alt="intro-art-image").head-art__frame-image
+                    .head-art__info
+                        h2.head-art__title Simple Art
+                        p.head-art__description коллекция произведений художников из разных регионов России
+            // Art Gallery
+            section.gallery-art
+                h2.gallery-art__title Галерея работ
+                .gallery-art__wrapper
+                    .gallery-art__head 
+                        h3.gallery-art__name Вид на дачное крыльцо, Снегири
+                        b.gallery-art__author Светлана Шуваева
+                        span.gallery-art__date 2017 г.
+                    .gallery-art__slider
+                    ul.gallery-art__bottom
+                        li.gallery-art__bottom-item
+                            p.gallery-art__description Для работ Сергея характерна объемная реальность, которая с помощью объектива трансформируется в плоскостной коллаж, а модели смешиваются с фоном, буквально растворяясь в нем, и становятся неотъемлемой частью всей композиции.
+                            p.gallery-art__description Серия работ Сергея Сапожникова, входящая в проект Saturnalia, специально создана на месте, в Грузии. Это архитектурно-пластические интервенции в природную среду, запечатленные на фотографиях. 
+                        li.gallery-art__bottom-item
+                            b.gallery-art__bottom-name Техника
+                            p.gallery-art__details Деревянные планшеты, холст, смешанная техника
+                        li.gallery-art__bottom-item
+                            b.gallery-art__bottom-name Размер
+                            p.gallery-art__details 80х240 см (4 части, 80х60 см каждая)
+                    a(href="item-art.html" target="_self").gallery-art__link Посмотреть работу
+            section.authors-art
+                .authors-art__wrapper
+                    h2.authors-art__title Авторы
+                    ul.authors-art__list
+                        +artAuthor('author-1', 'Никита Алексеев', 'author-page.html')
+                        +artAuthor('author-2', 'Дарья Иринчеева', 'author-page.html')
+                        +artAuthor('author-3', 'Зина Исупова', 'author-page.html')
+                        +artAuthor('author-4', 'Александра Галкина', 'author-page.html')
+                        +artAuthor('author-5', 'Александра Паперно', 'author-page.html')
+                        +artAuthor('author-6', 'Ирина Корина', 'author-page.html')
+                        +artAuthor('author-7', 'Анастасия Потемкина', 'author-page.html')
+                        +artAuthor('author-8', 'Павел Пепперштейн', 'author-page.html')
+                        +artAuthor('author-9', 'Александр Повзнер', 'author-page.html')
+                        +artAuthor('author-10', 'Светлана Шуваева', 'author-page.html')
+                        +artAuthor('author-11', 'Сергей Сапожников', 'author-page.html')
+                        +artAuthor('author-12', 'Ольга Чернышёва', 'author-page.html')
+            section.about-art
+                .about-art__wrapper
+                    .about-art__head
+                        h3.about-art__name Екатерина Винокурова
+                        b.about-art__title Куратор коллекции Simple Art
+                    p.about-art__description Работает в таких медиа, как живопись, инсталляция и скульптура. Одной из главных тем художественного осмысления является трансформация концепции человеческой природы в экстремальных, критических ситуациях и влияние СМИ на этот процесс
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="static/js/main.js")
+        block script
