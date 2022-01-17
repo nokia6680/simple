@@ -38,8 +38,9 @@ html(lang="ru-RU")
                         source(srcset="static/images/content/head-art-mb.webp" type="image/webp")
                         img(src="static/images/content/head-art-mb.jpg" alt="intro-art-image").head-art__frame-image
                     .head-art__info
-                        h2.head-art__title Simple Art
-                        p.head-art__description коллекция произведений художников из разных регионов России
+                        h2.head-art__title Максим Каширин
+                        span.head-art__role Основатель и президент Simple Group
+                        p.head-art__description Коллекция искусства SimpleWine — это корпоративная коллекция, в которую войдут произведения искусства, созданные художниками из разных регионов России.
             // Art Gallery
             section.gallery-art
                 h2.gallery-art__title Галерея работ
@@ -61,27 +62,25 @@ html(lang="ru-RU")
                             p.gallery-art__details 80х240 см (4 части, 80х60 см каждая)
                     a(href="item-art.html" target="_self").gallery-art__link Посмотреть работу
             section.authors-art
-                .authors-art__wrapper
-                    h2.authors-art__title Авторы
-                    ul.authors-art__list
-                        +artAuthor('author-1', 'Никита Алексеев', 'author-page.html')
-                        +artAuthor('author-2', 'Дарья Иринчеева', 'author-page.html')
-                        +artAuthor('author-3', 'Зина Исупова', 'author-page.html')
-                        +artAuthor('author-4', 'Александра Галкина', 'author-page.html')
-                        +artAuthor('author-5', 'Александра Паперно', 'author-page.html')
-                        +artAuthor('author-6', 'Ирина Корина', 'author-page.html')
-                        +artAuthor('author-7', 'Анастасия Потемкина', 'author-page.html')
-                        +artAuthor('author-8', 'Павел Пепперштейн', 'author-page.html')
-                        +artAuthor('author-9', 'Александр Повзнер', 'author-page.html')
-                        +artAuthor('author-10', 'Светлана Шуваева', 'author-page.html')
-                        +artAuthor('author-11', 'Сергей Сапожников', 'author-page.html')
-                        +artAuthor('author-12', 'Ольга Чернышёва', 'author-page.html')
+                h2.authors-art__title Авторы
+                ul.authors-art__list
+                    +artAuthor('author-1', 'Никита Алексеев', 'author-page.html')
+                    +artAuthor('author-2', 'Дарья Иринчеева', 'author-page.html')
+                    +artAuthor('author-3', 'Зина Исупова', 'author-page.html')
+                    +artAuthor('author-4', 'Александра Галкина', 'author-page.html')
+                    +artAuthor('author-5', 'Александра Паперно', 'author-page.html')
+                    +artAuthor('author-6', 'Ирина Корина', 'author-page.html')
+                    +artAuthor('author-7', 'Анастасия Потемкина', 'author-page.html')
+                    +artAuthor('author-8', 'Павел Пепперштейн', 'author-page.html')
+                    +artAuthor('author-9', 'Александр Повзнер', 'author-page.html')
+                    +artAuthor('author-10', 'Светлана Шуваева', 'author-page.html')
+                    +artAuthor('author-11', 'Сергей Сапожников', 'author-page.html')
+                    +artAuthor('author-12', 'Ольга Чернышёва', 'author-page.html')
             section.about-art
-                .about-art__wrapper
-                    .about-art__head
-                        h3.about-art__name Екатерина Винокурова
-                        b.about-art__title Куратор коллекции Simple Art
-                    p.about-art__description Работает в таких медиа, как живопись, инсталляция и скульптура. Одной из главных тем художественного осмысления является трансформация концепции человеческой природы в экстремальных, критических ситуациях и влияние СМИ на этот процесс
+                .about-art__head
+                    h3.about-art__name Екатерина Винокурова
+                    b.about-art__title Куратор коллекции Simple Art
+                p.about-art__description Работает в таких медиа, как живопись, инсталляция и скульптура. Одной из главных тем художественного осмысления является трансформация концепции человеческой природы в экстремальных, критических ситуациях и влияние СМИ на этот процесс
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="static/js/main.js")
         block script

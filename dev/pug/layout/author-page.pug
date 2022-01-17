@@ -22,20 +22,20 @@ html(lang="ru-RU")
             section.author
                 .author__bio
                     .author__head
-                        h1.author__title
-                            picture.author__frame
-                                source(media="(min-width: 1366px)" srcset="static/images/content/author-photo.webp" type="image/webp")
-                                source(media="(min-width: 1366px)" srcset="static/images/content/author-photo.jpg" type="image/webp")
-                                source(srcset="static/images/content/author-photo-mb.webp" type="image/webp")
-                                img(src="static/images/content/author-photo-mb.jpg" alt="").author__frame-image
+                        h1.author__title Дарья Иринчеева
+                        picture.author__frame
+                            source(media="(min-width: 1366px)" srcset="static/images/content/author-photo.webp" type="image/webp")
+                            source(media="(min-width: 1366px)" srcset="static/images/content/author-photo.jpg" type="image/webp")
+                            source(srcset="static/images/content/author-photo-mb.webp" type="image/webp")
+                            img(src="static/images/content/author-photo-mb.jpg" alt="").author__frame-image
                         ul.author__data
                             li.author__data-item
-                                span.author__data-title
-                                b.author__data-description
+                                span.author__data-title Год рождения
+                                b.author__data-description 1978
                             li.author__data-item
-                                span.author__data-title
-                                b.author__data-description
-                        p.author__description
+                                span.author__data-title Город
+                                b.author__data-description Москва
+                        p.author__description 2000 году окончила в Нью-Йорке университет Cooper Union for the Advancement of Science and Art, где училась у Дори Эштон, Роберта Брира и Ханса Хааке.
                     .author__career
                         picture.author__career-frame
                             source(media="(min-width: 1366px)" srcset="static/images/content/author-photo-career.webp" type="image/webp")
@@ -43,9 +43,33 @@ html(lang="ru-RU")
                             source(srcset="static/images/content/author-photo-career-mb.webp" type="image/webp")
                             img(src="static/images/content/author-photo-career-mb.jpg" alt="").author__frame-image
                         .author__career-about
-                            p.author__career-description
-                            p.author__career-description
-                            p.author__career-description
+                            p.author__career-description Первая персональная выставка состоялась в Государственном центре современного искусства (ГЦСИ, Москва) в 2004 году. С тех пор персональные выставки многократно проходили в галереях и музеях в России и за рубежом: в Московском музее современного искусства, Государственном музее архитектуры им. А. В. Щусева, в галереях Stella Art Foundation, GMG, Paperworks (Москва), в музее Лапидариум (Новиград) и других.
+                            p.author__career-description Работы Александры Паперно также демонстрировались на Московской биеннале современного искусства (куратор Катрин де Зегер, 2013), Пражской биеннале современного искусства (кураторы Елена Контова и Джанкарло Полити).
+                            p.author__career-description Один из ее последних проектов «Об обустройстве сна шестой пятилетки» был представлен на выставке «Шоссе Энтузиастов» в венецианском Casa dei Tre Oci. Живет и работает в Москве.
+                .author__works
+                    h3.author__subtitle Работы Дарьи в коллекции Simple
+                    ul.author__works-list
+                        li.author__works-item
+                            picture.author__works-frame
+                                source(media="(min-width: 1366px)" srcset="static/images/content/author-work-1.webp" type="image/webp")
+                                source(media="(min-width: 1366px)" srcset="static/images/content/author-work-1.jpg" type="image/webp")
+                                source(srcset="static/images/content/author-work-1-mb.webp" type="image/webp")
+                                img(src="static/images/content/author-work-1-mb.jpg" alt="").author__works-image
+                            b.author__works-name Утренний календарь
+                        li.author__works-item
+                            picture.author__works-frame
+                                source(media="(min-width: 1366px)" srcset="static/images/content/author-work-2.webp" type="image/webp")
+                                source(media="(min-width: 1366px)" srcset="static/images/content/author-work-2.jpg" type="image/webp")
+                                source(srcset="static/images/content/author-work-2-mb.webp" type="image/webp")
+                                img(src="static/images/content/author-work-2-mb.jpg" alt="").author__works-image
+                            b.author__works-name Утренний календарь
+                        li.author__works-item
+                            picture.author__works-frame
+                                source(media="(min-width: 1366px)" srcset="static/images/content/author-work-3.webp" type="image/webp")
+                                source(media="(min-width: 1366px)" srcset="static/images/content/author-work-3.jpg" type="image/webp")
+                                source(srcset="static/images/content/author-work-3-mb.webp" type="image/webp")
+                                img(src="static/images/content/author-work-3-mb.jpg" alt="").author__works-image
+                            b.author__works-name Утренний календарь
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="static/js/main.js")
         block script
