@@ -80,8 +80,6 @@ mixin netItemMultiple(type, city, image)
 mixin artAuthor(image, name, link)
     li.authors-art__item
         picture.authors-art__frame
-            source(media="(min-width: 1366px)" srcset="static/images/content/" +image +".webp" type="image/webp")
-            source(media="(min-width: 1366px)" srcset="static/images/content/" +image +".jpg" type="image/webp")
             source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
             img(src="static/images/content/" +image +"-mb.jpg" alt="" +name).authors-art__frame-image
         a(href="" +link target="_self").authors-art__link=name

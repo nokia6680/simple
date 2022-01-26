@@ -42,3 +42,31 @@
         @include font-setting($helve-font, 20px, 24px, 400, #D8D8D8);
     }
 }
+
+@include min-screen(1366px) {
+    .about-art {
+        --wrapWidth: calc(100% - 1160px);
+        padding: 80px calc((var(--wrapWidth) / 2)) 220px calc((var(--wrapWidth) / 2));
+
+        &__head {
+            margin-bottom: 116px;
+
+            &::after {
+                width: 54px;
+                height: 44px;
+            }
+        }
+
+        &__name,
+        &__title {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        &__description {
+            font-size: 40px;
+            line-height: 48px;
+        }
+    }
+
+}

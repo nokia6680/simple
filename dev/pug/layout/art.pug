@@ -11,6 +11,7 @@ html(lang="ru-RU")
         <![endif]-->
         meta(name="viewport" content="width=device-width,initial-scale=1")
         meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css")
         link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
         link(rel="stylesheet" type='text/css' href="static/css/styles.css")
         link(rel="preconnect" href="https://fonts.googleapis.com")
@@ -28,7 +29,7 @@ html(lang="ru-RU")
                     img(src="static/images/content/intro-art-mb.jpg" alt="intro-art-image").intro-art__frame-image
                 .intro-art__info
                     h1.intro-art__title Simple Art
-                    p.intro-art__description коллекция произведений художников из разных регионов России
+                    p.intro-art__description Коллекция произведений художников из разных регионов России
             // Art director
             section.head-art
                 .head-art__wrapper
@@ -49,7 +50,81 @@ html(lang="ru-RU")
                         h3.gallery-art__name Вид на дачное крыльцо, Снегири
                         b.gallery-art__author Светлана Шуваева
                         span.gallery-art__date 2017 г.
-                    .gallery-art__slider
+                    .gallery-art__slider.swiper-gallery-container
+                        button(type="button").gallery-prev
+                        .swiper-wrapper
+                            .gallery-art__slide(data-author="").swiper-slide
+                                picture.gallery-art__frame
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.webp" type="image/webp")
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.jpg")
+                                    source(srcset="static/images/content/gal-slide-1.webp" type="image/webp")
+                                    img(src="static/images/content/gal-slide-1.jpg" alt="author-name").gallery-art__frame-image
+                                span.gallery-art__slide-nr 1/2
+                            .gallery-art__slide(data-author="").swiper-slide
+                                picture.gallery-art__frame
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.webp" type="image/webp")
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.jpg")
+                                    source(srcset="static/images/content/gal-slide-1.webp" type="image/webp")
+                                    img(src="static/images/content/gal-slide-1.jpg" alt="author-name").gallery-art__frame-image
+                                span.gallery-art__slide-nr 2/2
+                            .gallery-art__slide(data-author="").swiper-slide
+                                picture.gallery-art__frame
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.webp" type="image/webp")
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.jpg")
+                                    source(srcset="static/images/content/gal-slide-1.webp" type="image/webp")
+                                    img(src="static/images/content/gal-slide-1.jpg" alt="author-name").gallery-art__frame-image
+                                span.gallery-art__slide-nr 1/12
+                            .gallery-art__slide(data-author="").swiper-slide
+                                picture.gallery-art__frame
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.webp" type="image/webp")
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.jpg")
+                                    source(srcset="static/images/content/gal-slide-1.webp" type="image/webp")
+                                    img(src="static/images/content/gal-slide-1.jpg" alt="author-name").gallery-art__frame-image
+                                span.gallery-art__slide-nr 2/12
+                            .gallery-art__slide(data-author="").swiper-slide
+                                picture.gallery-art__frame
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.webp" type="image/webp")
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.jpg")
+                                    source(srcset="static/images/content/gal-slide-1.webp" type="image/webp")
+                                    img(src="static/images/content/gal-slide-1.jpg" alt="author-name").gallery-art__frame-image
+                                span.gallery-art__slide-nr 1/2
+                            .gallery-art__slide(data-author="").swiper-slide
+                                picture.gallery-art__frame
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.webp" type="image/webp")
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.jpg")
+                                    source(srcset="static/images/content/gal-slide-1.webp" type="image/webp")
+                                    img(src="static/images/content/gal-slide-1.jpg" alt="author-name").gallery-art__frame-image
+                                span.gallery-art__slide-nr 1/2
+                            .gallery-art__slide(data-author="").swiper-slide
+                                picture.gallery-art__frame
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.webp" type="image/webp")
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.jpg")
+                                    source(srcset="static/images/content/gal-slide-1.webp" type="image/webp")
+                                    img(src="static/images/content/gal-slide-1.jpg" alt="author-name").gallery-art__frame-image
+                                span.gallery-art__slide-nr 2/2
+                            .gallery-art__slide(data-author="").swiper-slide
+                                picture.gallery-art__frame
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.webp" type="image/webp")
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.jpg")
+                                    source(srcset="static/images/content/gal-slide-1.webp" type="image/webp")
+                                    img(src="static/images/content/gal-slide-1.jpg" alt="author-name").gallery-art__frame-image
+                                span.gallery-art__slide-nr 1/12
+                            .gallery-art__slide(data-author="").swiper-slide
+                                picture.gallery-art__frame
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.webp" type="image/webp")
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.jpg")
+                                    source(srcset="static/images/content/gal-slide-1.webp" type="image/webp")
+                                    img(src="static/images/content/gal-slide-1.jpg" alt="author-name").gallery-art__frame-image
+                                span.gallery-art__slide-nr 2/12
+                            .gallery-art__slide(data-author="").swiper-slide
+                                picture.gallery-art__frame
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.webp" type="image/webp")
+                                    source(media="(min-width: 1366px)" srcset="static/images/content/gal-slider-1-lg.jpg")
+                                    source(srcset="static/images/content/gal-slide-1.webp" type="image/webp")
+                                    img(src="static/images/content/gal-slide-1.jpg" alt="author-name").gallery-art__frame-image
+                                span.gallery-art__slide-nr 1/2
+                        .swiper-pagination
+                        button(type="button").gallery-next
                     ul.gallery-art__bottom
                         li.gallery-art__bottom-item
                             p.gallery-art__description Для работ Сергея характерна объемная реальность, которая с помощью объектива трансформируется в плоскостной коллаж, а модели смешиваются с фоном, буквально растворяясь в нем, и становятся неотъемлемой частью всей композиции.
@@ -83,4 +158,6 @@ html(lang="ru-RU")
                 p.about-art__description Работает в таких медиа, как живопись, инсталляция и скульптура. Одной из главных тем художественного осмысления является трансформация концепции человеческой природы в экстремальных, критических ситуациях и влияние СМИ на этот процесс
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="static/js/main.js")
+        script(src="https://unpkg.com/swiper@7/swiper-bundle.min.js")
+        script(src="static/js/slider.js")
         block script
