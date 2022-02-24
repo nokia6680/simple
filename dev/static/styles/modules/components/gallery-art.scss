@@ -49,11 +49,43 @@
     &__author {
         grid-area: author;
         @include font-setting($helve-font, 16px, 20px, 700, $black);
+
+        text-decoration: none;
+        position: relative;
+        cursor: pointer;
+
+        transition: 0.4s $cubic;
+
+        &::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 1px;
+            background-color: $pink;
+            transform: scaleX(0);
+            transform-origin: right;
+
+            transition: 0.4s $cubic;
+        }
+
+        &:hover {
+            color: $pink;
+
+            &::after {
+                transform: scaleX(1);
+                transform-origin: left;
+                transition: 0.4s $cubic;
+            }
+        }
     }
 
     &__date {
         grid-area: date;
         @include font-setting($helve-font, 16px, 20px, 400, $black);
+        white-space: nowrap;
     }
 
     &__slider {
@@ -93,6 +125,10 @@
 
         .swiper-pagination-bullet-active {
             background-color: #EA0076;
+        }
+
+        .gallery-art__link {
+            display: none;
         }
     }
 
@@ -281,7 +317,7 @@
     }
 }
 
-@include min-screen(1366px) {
+@include min-screen(1280px) {
     .gallery-art {
         margin-bottom: 126px;
 
@@ -296,6 +332,7 @@
             padding-left: calc((var(--wrapWidth) / 2));
             padding-right: calc((var(--wrapWidth) / 2));
             padding-bottom: 60px;
+            z-index: 4;
         }
 
         &__head {
@@ -325,6 +362,43 @@
 
             margin-bottom: 60px;
             position: relative;
+
+            &:hover {
+                .gallery-art__link {
+                    z-index: 10;
+                    box-shadow: 0 0 100px 1px rgba(0, 0, 0, 0.35);
+                    transition: 0.35s $cubic;
+                }
+            }
+
+            .gallery-art__link {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                align-self: center;
+                width: 260px;
+                height: 50px;
+                @include flex-setting(column, center, center);
+                @include font-setting($helve-font, 17px, 19px, 400, $black);
+                transition: 0.35s $cubic;
+                border: none;
+                background-color: $white;
+                text-decoration: none;
+                transition: 0.35s linear;
+
+                &:hover {
+                    color: $pink;
+                    transition: 0.35s linear;
+                }
+
+                &:active {
+                    border-color: $pink;
+                    background-color: $pink;
+                    color: $white;
+                    transition: 0.35s linear;
+                }
+            }
 
             .swiper-pagination {
                 display: none;
@@ -434,7 +508,7 @@
         }
 
         &__link {
-            width: 320px;
+            display: none;
         }
 
         &__showroom {

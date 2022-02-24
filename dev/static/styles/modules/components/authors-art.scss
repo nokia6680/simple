@@ -29,6 +29,26 @@
         }
     }
 
+    &__link {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover,
+        &:active {
+            .authors-art__name {
+                color: $pink;
+
+                &::after {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                    transition: 0.4s $cubic;
+                }
+            }
+        }
+    }
+
     &__frame {
         position: relative;
         width: 100%;
@@ -48,13 +68,11 @@
         }
     }
 
-    &__link {
+    &__name {
         @include font-setting($helve-font, 23px, 30px, 700, $black);
         text-align: left;
-        text-decoration: none;
         letter-spacing: -0.035em;
         position: relative;
-        cursor: pointer;
 
         transition: 0.4s $cubic;
 
@@ -72,20 +90,10 @@
 
             transition: 0.4s $cubic;
         }
-
-        &:hover {
-            color: $pink;
-
-            &::after {
-                transform: scaleX(1);
-                transform-origin: left;
-                transition: 0.4s $cubic;
-            }
-        }
     }
 }
 
-@include min-screen(1366px) {
+@include min-screen(1280px) {
     .authors-art {
         --wrapWidth: calc(100% - 1160px);
         padding: 0 calc((var(--wrapWidth) / 2));

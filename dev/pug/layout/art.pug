@@ -24,7 +24,9 @@ html(lang="ru-RU")
             section.intro-art
                 picture.intro-art__frame
                     source(media="(min-width: 1366px)" srcset="static/images/content/intro-art.webp" type="image/webp")
-                    source(media="(min-width: 1366px)" srcset="static/images/content/intro-art.jpg" type="image/webp")
+                    source(media="(min-width: 1366px)" srcset="static/images/content/intro-art.jpg")
+                    source(media="(min-width: 720px)" srcset="static/images/content/intro-art-tb.webp" type="image/webp")
+                    source(media="(min-width: 720px)" srcset="static/images/content/intro-art-tb.jpg")
                     source(srcset="static/images/content/intro-art-mb.webp" type="image/webp")
                     img(src="static/images/content/intro-art-mb.jpg" alt="intro-art-image").intro-art__frame-image
                 .intro-art__info
@@ -35,7 +37,9 @@ html(lang="ru-RU")
                 .head-art__wrapper
                     picture.head-art__frame
                         source(media="(min-width: 1366px)" srcset="static/images/content/head-art.webp" type="image/webp")
-                        source(media="(min-width: 1366px)" srcset="static/images/content/head-art.jpg" type="image/webp")
+                        source(media="(min-width: 1366px)" srcset="static/images/content/head-art.jpg")
+                        source(media="(min-width: 720px)" srcset="static/images/content/head-art-tb.webp" type="image/webp")
+                        source(media="(min-width: 720px)" srcset="static/images/content/head-art-tb.jpg")
                         source(srcset="static/images/content/head-art-mb.webp" type="image/webp")
                         img(src="static/images/content/head-art-mb.jpg" alt="intro-art-image").head-art__frame-image
                     .head-art__info
@@ -48,7 +52,7 @@ html(lang="ru-RU")
                 .gallery-art__wrapper
                     .gallery-art__head 
                         h3.gallery-art__name Вид на дачное крыльцо, Снегири
-                        b.gallery-art__author Светлана Шуваева
+                        a(href="author-page.html" target="_self").gallery-art__author Светлана Шуваева
                         span.gallery-art__date 2017 г.
                     .gallery-art__slider.swiper-gallery-container
                         button(type="button").gallery-prev
@@ -124,6 +128,7 @@ html(lang="ru-RU")
                                     img(src="static/images/content/gal-slide-1.jpg" alt="author-name").gallery-art__frame-image
                                 span.gallery-art__slide-nr 1/2
                         .swiper-pagination
+                        a(href="item-art.html" target="_self").gallery-art__link Посмотреть работу
                         button(type="button").gallery-next
                     ul.gallery-art__bottom
                         li.gallery-art__bottom-item
@@ -154,8 +159,8 @@ html(lang="ru-RU")
             section.about-art
                 .about-art__head
                     h3.about-art__name Екатерина Винокурова
-                    b.about-art__title Куратор коллекции Simple Art
-                p.about-art__description Работает в таких медиа, как живопись, инсталляция и скульптура. Одной из главных тем художественного осмысления является трансформация концепции человеческой природы в экстремальных, критических ситуациях и влияние СМИ на этот процесс
+                    b.about-art__title Соосновательница Smart Art
+                p.about-art__description В коллекцию Simple вошли произведения уже зарекомендовавших себя современных российских художников, работающих с различными медиа от живописи и фотографии до скульптуры и инсталляции. Специально для коллекции было создано несколько site-specific произведений, вдохновлённых философией бренда. Подобный структурный подход к созданию коллекции позволит компании быть активным участником российской художественной сцены, а также наполнит коллектив новыми смыслами, реализуя актуальную социальную миссию.
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="static/js/main.js")
         script(src="https://unpkg.com/swiper@7/swiper-bundle.min.js")
