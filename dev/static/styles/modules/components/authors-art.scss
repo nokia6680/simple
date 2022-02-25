@@ -93,6 +93,32 @@
     }
 }
 
+@include min-screen(720px) {
+    .authors-art {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 120px;
+
+        &__title {
+            margin-bottom: 60px;
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-flow: row dense;
+            grid-column-gap: 20px;
+            grid-row-gap: 40px;
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        &__item {
+            margin-bottom: 0;
+        }
+    }
+}
+
 @include min-screen(1280px) {
     .authors-art {
         --wrapWidth: calc(100% - 1160px);
