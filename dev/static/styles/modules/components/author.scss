@@ -149,6 +149,8 @@
             width: 100%;
 
             @include flex-setting(column, flex-start, center);
+
+            margin-bottom: 48px;
         }
 
         &-link {
@@ -230,6 +232,34 @@
         @include font-setting($helve-font, 18px, 23px, 700, $black);
         text-align: left;
         margin-bottom: 40px;
+    }
+
+    &__return {
+        align-self: center;
+        width: auto;
+        @include flex-setting(column, center, center);
+        @include font-setting($helve-font, 17px, 17px, 400, $black);
+
+        padding: 16px 45px;
+        border: 1px solid $black;
+        background-color: transparent;
+
+        text-decoration: none;
+        cursor: pointer;
+        transition: 0.4s $cubic;
+
+        &:hover {
+            border-color: $pink;
+            color: $pink;
+            transition: 0.4s $cubic;
+        }
+
+        &:active {
+            background-color: $pink;
+            color: $white;
+            border-color: $pink;
+            transition: 0.4s $cubic;
+        }
     }
 }
 
@@ -360,9 +390,15 @@
                 line-height: 20px;
             }
         }
+
+        &__return {
+            width: 260px;
+            height: 50px;
+            padding: 0;
+        }
     }
 }
-@include min-screen(1280px) {
+@include min-screen(1220px) {
     .author {
         --wrapWidth: calc(100% - 1160px);
         padding: 0 calc((var(--wrapWidth) / 2));

@@ -67,7 +67,7 @@
         }
     }
 }
-@include min-screen(1280px) {
+@include min-screen(1220px) {
     .about-art {
         --wrapWidth: calc(100% - 1160px);
         padding: 80px calc((var(--wrapWidth) / 2)) 220px calc((var(--wrapWidth) / 2));

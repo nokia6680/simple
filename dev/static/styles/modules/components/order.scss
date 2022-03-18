@@ -5,10 +5,10 @@
     @include flex-setting(column, center, center);
 
     background-color: #010101;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
-    padding: 24px 20px;
+    padding: 48px 20px 24px 20px;
 
     &.inactive {
         .order__form {
@@ -43,7 +43,7 @@
     &.visible {
         .order__form {
             max-height: 400px;
-            transition: 0.25s ease-in;
+            transition: 0.25s ease-in 0.5s;
         }
 
         .order__list {
@@ -55,6 +55,11 @@
         .order__closer {
             opacity: 1;
             transition: 1s ease-in;
+        }
+
+        .order__agree {
+            opacity: 1;
+            transition: 0.25s ease-in 0.7s;
         }
     }
 
@@ -81,7 +86,7 @@
     }
 
     &__reaction {
-        @include font-setting($helve, 25px, 1.2, 400, #fff);
+        @include font-setting($helve-font, 25px, 1.2, 400, #fff);
         text-align: center;
         display: none;
     }
@@ -135,19 +140,21 @@
     }
 
     &__agree {
-        @include font-setting($helve-font, 12px, 1.2, 400, $white);
+        @include font-setting($helve-font, 12px, 1.2, 400, rgba(255, 255, 255, 0.7));
 
         text-align: center;
         margin-bottom: 32px;
 
+        opacity: 0;
+
         a {
             text-decoration: none;
-            color: rgba(255, 255, 255, 0.7);
+            color: $white;
             transition: 0.35s linear;
 
             &:hover,
             &:active {
-                color: rgba(255, 255, 255, 1);
+                color: $pink;
                 transition: 0.35s linear;
             }
         }
@@ -244,7 +251,7 @@
     }
 }
 
-@media only screen and (min-width: 1366px) {
+@media only screen and (min-width: 1220px) {
     .order {
         min-height: 0;
         padding: 24px 0;
@@ -259,15 +266,24 @@
             .order__wrapper {
                 transition: none;
             }
+
+            .order__agree {
+                opacity: 1;
+            }
         }
 
         &__wrapper {
-            max-width: 1300px;
+            max-width: 1160px;
+            display: grid;
+            grid-template-columns: 310px 1fr;
+            grid-column-gap: 60px;
+            justify-content: space-between;
+            align-items: center;
         }
 
         &__about {
             display: block;
-            @include font-setting($helve-font, 28px, 1, 400, #fff);
+            @include font-setting($helve-font, 22px, 1, 400, #fff);
             white-space: nowrap;
         }
 
@@ -283,9 +299,15 @@
                 'note button'
             ;
             grid-template-columns: 1fr 130px;
-            grid-column-gap: 45px;
+            grid-column-gap: 40px;
+            justify-content: space-between;
+            align-items: center;
             margin-left: auto;
             margin-right: 0;
+        }
+
+        &__input {
+            font-size: 16px;
         }
 
         &__list {
@@ -294,12 +316,13 @@
             gap: 24px;
             opacity: 1;
             transition: none;
-            margin-bottom: 20px;
+            margin-bottom: 8px;
+            max-height: 100%;
         }
 
         &__item {
             width: auto;
-            max-width: 335px;
+            max-width: 280px;
         }
 
         &__agree {
@@ -311,7 +334,8 @@
         &__submit {
             grid-area: button;
             width: auto;
-            padding: 15px 40px;
+            font-size: 16px;
+            padding: 12px 34px;
             margin-left: auto;
             margin-right: 0;
             opacity: 1;
@@ -320,20 +344,5 @@
         &__start {
             display: none;
         }
-    }
-}
-
-@media screen and (min-width: 1920px) {
-    .order__wrapper {
-        max-width: 1400px;
-    }
-
-    .order__list {
-        gap: 60px;
-        margin-right: 48px;
-    }
-
-    .order__submit {
-        padding: 15px 100px;
     }
 }

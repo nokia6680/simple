@@ -119,7 +119,7 @@
     }
 }
 
-@include min-screen(1280px) {
+@include min-screen(1220px) {
     .authors-art {
         --wrapWidth: calc(100% - 1160px);
         padding: 0 calc((var(--wrapWidth) / 2));
