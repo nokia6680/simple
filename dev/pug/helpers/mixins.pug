@@ -84,3 +84,8 @@ mixin artAuthor(image, name, link)
                 source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
                 img(src="static/images/content/" +image +"-mb.jpg" alt="" +name).authors-art__frame-image
             span.authors-art__name=name
+
+mixin cardItem(link, image, title)
+    .b-cards-slider__item.swiper-slide
+        a(href="" +link target="_self").b-cards-slider__body
+            img(src="static/images/content/" +image +'.svg' alt="" +title).b-cards-slider__image
