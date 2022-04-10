@@ -92,7 +92,40 @@ button { outline: none; }
 }
 
 .main {
+    width: 100%;
+    height: 100%;
+}
 
+.panel {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.red {
+        background-color: red;
+    }
+
+    &.green {
+        background-color: khaki;
+    }
+
+    &.blue {
+        background-color: navy;
+    }
+
+    &.orange {
+        background-color: gold;
+    }
+}
+
+.block {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 //Модули
