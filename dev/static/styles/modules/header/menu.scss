@@ -167,6 +167,8 @@
 
             &__btn {
                 font-size: toRem(24);
+                cursor: pointer;
+                outline: none;
             }
         }
     }

@@ -11,7 +11,7 @@
 
     &.js-reg-form {
         .form__list {
-            margin-bottom: toRem(64);
+            margin-bottom: toRem(48);
         }
 
         .form__item:nth-of-type(3) {
@@ -128,6 +128,17 @@
 
         padding: 0;
         margin-bottom: toRem(30);
+    }
+
+    &__agree {
+        @include font-setting($roboto-cond, toRem(12), toRem(14), 300, $eno-gray);
+        text-align: center;
+        margin-bottom: toRem(24);
+
+        a {
+            color: $white;
+            text-decoration: none;
+        }
     }
 
     &__submit {
