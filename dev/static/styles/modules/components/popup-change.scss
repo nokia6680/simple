@@ -1,4 +1,4 @@
-.popup-restore {
+.popup-change {
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -12,12 +12,13 @@
 
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
+
     display: none;
 
     &.active {
         display: flex;
 
-        .popup-restore__wrapper {
+        .popup-change__wrapper {
             animation: fadeIn 0.5s $cubic forwards;
         }
     }
@@ -56,60 +57,10 @@
         outline: none;
     }
 
-    .restore {
+    .change {
         width: 100%;
         height: 100%;
         @include flex-setting(column, flex-start, center);
-
-        &.step-1 {
-            .restore__item--second {
-                display: none;
-            }
-
-            .js-set-password {
-                display: none;
-            }
-
-            .restore__description:first-of-type {
-                display: block;
-            }
-        }
-
-        &.step-2 {
-            .restore__list {
-                display: none;
-            }
-
-            .js-set-password {
-                display: none;
-            }
-
-            .restore__description:nth-of-type(2) {
-                display: block;
-            }
-
-            .js-reset-password {
-                display: none;
-            }
-        }
-
-        &.step-3 {
-            .restore__item--first {
-                display: none;
-            }
-
-            .js-reset-password {
-                display: none;
-            }
-
-            .js-set-password {
-                display: flex;
-            }
-
-            .restore__description:last-of-type {
-                display: block;
-            }
-        }
 
         &__title {
             @include font-setting($roboto-cond, toRem(18), toRem(24), 400, $eno-gray);
@@ -128,7 +79,8 @@
 
             @include flex-setting(column, flex-start, center);
 
-            margin-bottom: toRem(40);
+            margin-bottom: toRem(24);
+            gap: toRem(20);
         }
 
         &__item {
@@ -137,19 +89,12 @@
             @include flex-setting(column, flex-start, flex-start);
 
             position: relative;
-
-            &--second {
-                margin-bottom: toRem(24);
-
-                &:last-of-type {
-                    margin-bottom: 0;
-                }
-            }
         }
 
         &__label {
             @include font-setting($roboto-cond, toRem(16), toRem(19), 400, $eno-gray);
             margin-bottom: toRem(4);
+            cursor: pointer;
         }
 
         &__input {
@@ -250,10 +195,14 @@
             }
         }
     }
+
+    &__restore {
+        margin-bottom: toRem(50);
+    }
 }
 
 @include min-screen(1366px) {
-    .popup-restore {
+    .popup-change {
         justify-content: flex-start;
 
         &__wrapper {
@@ -267,7 +216,7 @@
             height: toRem(60);
         }
 
-        .restore__btn {
+        .change__btn {
             &:hover,
             &:focus {
                 background-color: $eno-red;

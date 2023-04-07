@@ -8,16 +8,13 @@ header.header
                 option(value="spb") Санкт-Петербург
         .header__controls
             button(type="button").header__btn Оформить заявку
-            button(type="button").header__login.js-form-opener
-    //- .header__bottom
-    //-     .header__logo
-    //-         a(href="#" target="_self").header__logo-link
-    //-             img(src="static/images/content/logo.svg" width="" height="" alt="Энотрия").header__logo-img
-    //-     nav.header__nav.nav
-    //-         ul.nav__list
-    //-             for i in navLinks
-    //-                 li.nav__item
-    //-                     a(href="" +i.link target="_self").nav__link=i.name
-    //-         .nav__search
-    //-             input(type="search" name="search" id="search").nav__search-input
-    //-             button(type="submit").nav__search-submit
+            button(type="button").header__login.js-cabinet-opener.logged
+            
+        .header__popup
+            button(type="button").header__popup-closer
+            .header__popup-info
+                img(src="static/images/content/photo.png" width="" height="" alt="").header__popup-img
+                b.header__popup-name Константин Константинов Констатнитонович
+            .header__popup-nav
+                a(href="enotria-cabinet.html" target="_self").header__popup-link Личный кабинет
+                a(href="" target="_self").header__popup-link.logout Выйти

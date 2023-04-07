@@ -1,5 +1,5 @@
 .popup-menu {
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
 
@@ -11,7 +11,7 @@
     @include flex-setting(column, center, center);
 
     background-color: rgba(0, 0, 0, 0.7);
-
+    z-index: 999;
     display: none;
 
     &.active {
@@ -23,11 +23,18 @@
     }
 
     &__wrapper {
+        overflow-y: auto;
         position: relative;
         @include flex-setting(column, flex-start, center);
         width: calc(100% - 16px);
+        max-width: toRem(448);
         height: calc(100% - 16px);
         opacity: 0;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 
     &__closer {

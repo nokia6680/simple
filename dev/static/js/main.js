@@ -29,3 +29,20 @@
          applyForm.classList.remove('active');
      });
  };
+
+
+ var awardOpener = document.querySelector('.open-btn');
+ var awardPopup = document.querySelector('.popup-award');
+ var awardCloser = document.querySelector('.popup-award__closer');
+
+ if (awardOpener) {
+     awardOpener.addEventListener('click', function() {
+         awardPopup.classList.add('active');
+     });
+ };
+
+ if (awardCloser) {
+     awardCloser.addEventListener('click', function() {
+         awardPopup.classList.remove('active');
+     });
+ };

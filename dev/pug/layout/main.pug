@@ -19,24 +19,24 @@ html(lang="ru-RU")
 		link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet")
 
 	body.body
-		a(href="partner-network.html" target="_self").b-contacts__join
-			h3.b-contacts__join-title Партнёрская сеть
-			img(src="static/images/content/ww-logo.png" alt="Wine & Whiskey logo").b-contacts__join-logo
-		a(href="art.html" target="_self") Страница ART
+		//- a(href="partner-network.html" target="_self").b-contacts__join
+		//- 	h3.b-contacts__join-title Партнёрская сеть
+		//- 	img(src="static/images/content/ww-logo.png" alt="Wine & Whiskey logo").b-contacts__join-logo
+		//- a(href="art.html" target="_self") Страница ART
+		// Slider
 		.b-cards-slider
 			.b-cards-slider__wrapper
 				.swiper-wrapper
-					+cardItem('#', 'b-card-1', 'Текст заголовка 1')
-					+cardItem('#', 'b-card-2', 'Текст заголовка 2')
-					+cardItem('#', 'b-card-3', 'Текст заголовка 3')
-					+cardItem('#', 'b-card-4', 'Текст заголовка 4')
-					+cardItem('#', 'b-card-1', 'Текст заголовка 1')
-					+cardItem('#', 'b-card-2', 'Текст заголовка 2')
-					+cardItem('#', 'b-card-3', 'Текст заголовка 3')
-					+cardItem('#', 'b-card-4', 'Текст заголовка 4')
+					+cardItem('#', 'banner-1.jpg', 'Текст заголовка 1')
+					+cardItem('#', 'banner-2.jpg', 'Текст заголовка 2')
+					+cardItem('#', 'banner-3.jpg', 'Текст заголовка 3')
+					+cardItem('#', 'banner-4.jpg', 'Текст заголовка 4')
+					+cardItem('#', 'banner-5.jpg', 'Текст заголовка 1')
+					+cardItem('#', 'banner-6.jpg', 'Текст заголовка 2')
 				.b-cards-slider__navigation
 					button(type="button").b-cards-slider__prev
 					button(type="button").b-cards-slider__next
+					
 		script(src="static/js/vendor/jquery-3.3.1.min.js")
 		script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js")
 		script(src="static/js/main.js")

@@ -19,17 +19,21 @@ html(lang="ru-RU")
         link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet")
 
     body.body
-        main.main
+        main.main.main--test
+            button(type="button").open-btn Открыть попап
+            
             .popup-award
                 .popup-award__wrapper
                     button(type="button").popup-award__closer
                     
                     p.popup-award__description Simple — это стабильно развивающаяся компания и лидер российского винного рынка с 28-летней историей
                     b.popup-award__subtitle Мы заняли 3-е место среди крупных FMCG компаний в рейтинге лучших работодателей России
-                        span по версии hh.ru в 2021 году.
-                img(src="static/images/content/leap.svg" width="" height="" alt="").popup-award__leap.popup-award__leap--first
-                img(src="static/images/content/leap.svg" width="" height="" alt="").popup-award__leap.popup-award__leap--second
-                img(src="static/images/content/leap.svg" width="" height="" alt="").popup-award__leap.popup-award__leap--third
-                img(src="static/images/content/leap.svg" width="" height="" alt="").popup-award__leap.popup-award__leap--fourth
-        script(src="static/js/how-slider.js")
+                    p.popup-award__description по версии hh.ru в 2021 году.
+                    
+                    span.popup-award__leap.popup-award__leap--first
+                    span.popup-award__leap.popup-award__leap--second
+                    span.popup-award__leap.popup-award__leap--third
+                    span.popup-award__leap.popup-award__leap--fourth
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="static/js/main.js")
         block script

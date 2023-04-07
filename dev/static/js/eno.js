@@ -4,8 +4,8 @@ var restoreOpener = document.querySelector('.form__restore');
 var restoreForm = document.querySelector('.popup-restore');
 var restoreCloser = document.querySelector('.popup-restore__closer');
 
-var regOpener = document.getElementsByClassName('js-form-opener');
-var elNodes = document.querySelectorAll(".js-form-opener");
+var regOpener = document.getElementsByClassName('js-cabinet-opener');
+var elNodes = document.querySelectorAll(".js-cabinet-opener");
 //
 for (var i = 0; i < regOpener.length; i++) {
     var elem = regOpener[i];
@@ -56,7 +56,7 @@ if (subCloser) {
     });
 };
 
-const tab = function () {
+const tab = function() {
     let tabNav = document.querySelectorAll('.menu__btn'), // Выбираем элементы навигации табов
         tabContent = document.querySelectorAll('.menu__form'), // Выбираем самы табы
         tabName; // Переменная для имени таба
@@ -71,7 +71,7 @@ const tab = function () {
             // Удаляем активный класс у всех элементов навигации табов
             item.classList.remove('active');
         });
-        this.classList.add('active');  // Добавляем активный укласс у элемента по которому кликнули
+        this.classList.add('active'); // Добавляем активный укласс у элемента по которому кликнули
         tabName = this.getAttribute('data-tab-name'); // Получаем имя таба, который нам нужен
         selectTabContent(tabName); // Запускаем функцию, чтобы показать выбранный таб
     }
@@ -86,3 +86,28 @@ const tab = function () {
 };
 
 tab();
+
+var changeOpen = document.querySelector('.js-change-opener');
+var changePopup = document.querySelector('.popup-change');
+var changeCloser = document.querySelector('.popup-change__closer');
+    if (changeOpen) {
+        changeOpen.addEventListener('click', function() {
+            event.preventDefault();
+            changePopup.classList.add('active');
+        });
+    };
+
+if (restoreOpener) {
+    restoreOpener.addEventListener('click', function() {
+        event.preventDefault();
+        changePopup.classList.remove('active');
+        restoreForm.classList.add('active');
+    });
+};
+
+if (changeCloser) {
+    changeCloser.addEventListener('click', function() {
+        event.preventDefault();
+        changePopup.classList.remove('active');
+    });
+};

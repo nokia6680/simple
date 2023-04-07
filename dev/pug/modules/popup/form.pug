@@ -9,7 +9,7 @@
                 form(method="post" action="/" name="authorization").menu__form.form.js-login-form.active
                     ul.form__list
                         li.form__item
-                            label(for="email").form__label E-mail
+                            label(for="email").form__label E-mail или телефон
                             input(type="email" name="email" id="email" onkeydown="validationMailEnter()").form__input
                             span.form__error.form__error--mail
                             span.form__sign
@@ -33,7 +33,7 @@
                             span.form__error.form__error--surname
                             span.form__sign
                         li.form__item
-                            label(for="patronymic").form__label Отчество*
+                            label(for="patronymic").form__label Отчество
                             input(type="text" id="patronymic" name="patronymic" onkeydown="validationPatr()").form__input.form__input--text
                             span.form__error.form__error--patronymic
                             span.form__sign
@@ -47,6 +47,18 @@
                             input(type="tel" id="tel-reg" name="tel-reg" onkeydown="validationTel()").form__input.mask-phone
                             span.form__error.form__error--tel
                             span.form__sign
+                                
+                        li.form__item
+                            label(for="password-reg").form__label Пароль*
+                            input(type="password" id="password-reg" name="password-reg" required).form__input
+                            span.form__error.form__error--password
+                            span.form__sign
+                        li.form__item
+                            label(for="password-reg-repeat").form__label Повторите пароль*
+                            input(type="password" id="password-reg-repeat" name="password-reg-repeat" required).form__input
+                            span.form__error.form__error--password
+                            span.form__sign
+                                
                     span.form__agree Нажимая на кнопку я принимаю 
                         a(href="#" target="_blank") условия&nbsp;обратки&nbsp;персональных&nbsp;данных
                     button(type="submit").form__submit.js-send-btn Зарегистрироваться
